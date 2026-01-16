@@ -2,9 +2,10 @@
 if __name__ == "__main__":
     import sys
 
-    result = 0
+    somme = 0
 
     for arg in sys.argv[1:]:
-        result += int(arg)
+        somme += int(arg)
 
-    print(result)
+    print(somme)
+    
