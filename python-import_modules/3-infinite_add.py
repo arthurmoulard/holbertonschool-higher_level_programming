@@ -1,9 +1,10 @@
-#!/usr/bin/env python3
-import sys
+#!/usr/bin/python3
+if __name__ == "__main__":
+    import sys
 
-total = 0
+    result = 0
 
-for arg in sys.argv[1:]:
-    total += int(arg)
+    for arg in sys.argv[1:]:
+        result += int(arg)
 
-print(total)
+    print(result)
