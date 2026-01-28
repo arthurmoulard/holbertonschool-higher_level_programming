@@ -11,12 +11,12 @@ class Rectangle:
     @property
     def width(self):
         """Getter: return the width of the rectangle"""
-        return self.width
+        return self.__width
 
     @property
     def height(self):
         """Getter: return the height of the rectangle"""
-        return self.height
+        return self.__height
 
     @width.setter
     def width(self, value):
@@ -43,9 +43,17 @@ class Rectangle:
     def perimeter(self):
         """ Return the perimeter of the rectangle"""
         if self.__height == 0 or self.__width == 0:
-            return None
+            return 0
         return (2 * self.__height) + (2 * self.__width)
-        for self.__width in range(self.__width):
-            for self.__height in range(self.__height):
-                print(str("#"))
-        print()
+    
+def __str__(self):
+    if self.__width == 0 or self.__height == 0:
+        return ""
+
+    Space = ""
+    for i in range(self.__height):
+        Space += "#" * self.__width
+        if i != self.__height - 1:
+            Space += "\n"
+    return Space
+    
