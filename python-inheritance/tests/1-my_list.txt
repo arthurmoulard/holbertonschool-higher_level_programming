@@ -1,36 +1,13 @@
-#!/usr/bin/python3
-"""
-Test file for MyList class
-"""
-
-MyList = __import__('my_list').MyList
-
-if __name__ == "__main__":
-    # Test 1: basic list
-    my_list = MyList([3, 1, 2])
-    print("Original list:", my_list)
-    print("Sorted list:")
-    my_list.print_sorted()
-    print("After print_sorted, original list still:", my_list)
-    print("-" * 30)
-
-    # Test 2: already sorted list
-    my_list = MyList([1, 2, 3, 4])
-    print("Original list:", my_list)
-    print("Sorted list:")
-    my_list.print_sorted()
-    print("-" * 30)
-
-    # Test 3: list with duplicates
-    my_list = MyList([4, 2, 4, 1, 2])
-    print("Original list:", my_list)
-    print("Sorted list:")
-    my_list.print_sorted()
-    print("-" * 30)
-
-    # Test 4: empty list
-    my_list = MyList()
-    print("Original list:", my_list)
-    print("Sorted list:")
-    my_list.print_sorted()
-    
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]

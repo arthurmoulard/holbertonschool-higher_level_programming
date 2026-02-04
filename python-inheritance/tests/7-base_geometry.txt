@@ -1,42 +1,22 @@
-#!/usr/bin/python3
-"""
-Test file for BaseGeometry class
-"""
-
-BaseGeometry = __import__('base_geometry').BaseGeometry
-
-if __name__ == "__main__":
-    # Test 1: area() method should raise Exception
-    bg = BaseGeometry()
-    print("Testing area() method:")
-    try:
-        bg.area()
-    except Exception as e:
-        print("Caught exception:", e)
-    print("-" * 30)
-
-    # Test 2: integer_validator with valid integer
-    print("Testing integer_validator() with valid integer:")
-    try:
-        bg.integer_validator("length", 5)
-        print("integer_validator passed for length=5")
-    except Exception as e:
-        print("integer_validator failed:", e)
-    print("-" * 30)
-
-    # Test 3: integer_validator with non-integer
-    print("Testing integer_validator() with non-integer:")
-    try:
-        bg.integer_validator("width", "not_an_int")
-    except Exception as e:
-        print("Caught exception:", e)
-    print("-" * 30)
-
-    # Test 4: integer_validator with zero or negative
-    print("Testing integer_validator() with zero and negative:")
-    for value in [0, -3]:
-        try:
-            bg.integer_validator("height", value)
-        except Exception as e:
-            print(f"Caught exception for height={value}:", e)
-    print("-" * 30)
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+>>> isinstance(bg, BaseGeometry)
+True
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+>>> bg.integer_validator("my_var", 10)
+>>> # Pas d'erreur pour un entier positif
+>>> bg.integer_validator("my_var", -5)
+Traceback (most recent call last):
+...
+ValueError: my_var must be greater than 0
+>>> bg.integer_validator("my_var", 0)
+Traceback (most recent call last):
+...
+ValueError: my_var must be greater than 0
+>>> bg.integer_validator("my_var", "hello")
+Traceback (most recent call last):
+...
+TypeError: my_var must be an integer
