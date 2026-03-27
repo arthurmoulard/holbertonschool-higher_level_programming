@@ -5,7 +5,6 @@ import sqlite3
 
 app = Flask(__name__)
 
-
 # --- Functions to read data ---
 def read_json():
     try:
@@ -14,7 +13,6 @@ def read_json():
     except Exception as e:
         print("Error reading JSON:", e)
         return []
-
 
 def read_csv():
     products = []
@@ -28,7 +26,6 @@ def read_csv():
     except Exception as e:
         print("Error reading CSV:", e)
     return products
-
 
 def read_sql():
     products = []
@@ -49,7 +46,6 @@ def read_sql():
     except Exception as e:
         print("Error reading SQL:", e)
     return products
-
 
 # --- Route ---
 @app.route('/products')
@@ -83,7 +79,6 @@ def products():
             error = "Invalid id"
 
     return render_template('product_display.html', products=product_list, error=error)
-
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
